@@ -1,0 +1,48 @@
+iniciar sesion
+	correo 
+	password
+crear
+	nombre
+	email
+	password
+	repetir password
+confirmacion de cuentas
+olvide 
+	email
+
+adentro
+	proyectos
+	crear proyecto
+		nombre
+	perfil
+	cerrar sesion
+	poryectos
+		nueva tarea
+			tarea
+		filtro
+			todas
+			completadas
+			pendientes
+		
+-------------------------	
+iniciar sesion
+	id
+	nombre
+	email
+	password
+	token
+			
+proyectos
+	id
+	nombre
+	id_user
+	
+tarea
+	id
+	tarea
+	id_proyecto
+	estado
+	
+	
+	
+	

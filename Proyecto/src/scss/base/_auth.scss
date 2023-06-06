@@ -1,0 +1,79 @@
+//index
+
+.content-index-auth{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.content-index-auth div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 40vh;
+}
+
+.content-index-auth div h1{
+    font-size: 100px;
+    color: rebeccapurple;
+}
+
+.content-index-auth div h3{
+    color: rebeccapurple;
+}
+
+
+.content-index-auth form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 20vh;
+    padding: 20px;
+    background-color: rgb(220 200 200);
+}
+
+.content-index-auth form label{
+    min-width: 400px;
+    font-size: 18px;
+    text-align: start;
+}
+
+.content-index-auth form input{
+    min-width: 400px;
+    margin: 5px 0px 20px 0px;
+    padding: 10px;
+    border:none;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.content-index-auth form input[type="submit"]{
+    background-color: rgb(71, 255, 47);
+}
+
+.content-index-auth form input[type="submit"]:hover{
+    background-color: rgb(51, 185, 33);
+    cursor: pointer;
+}
+
+.content-index-auth section{
+    min-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.content-index-auth section a{
+    color: black;
+    padding: 10px 0px 0px 0px;
+}
+
+.content-index-auth section a:hover{
+    text-decoration: underline;
+}
