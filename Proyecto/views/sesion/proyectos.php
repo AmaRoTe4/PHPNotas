@@ -20,7 +20,7 @@ include __DIR__ . "/base-sup.php";
     <?php foreach($proyectos as $proyecto): ?>
         <li>
             <a href="/sesion/proyectos/listado?id=<?php echo $proyecto->id ?>">
-                <?php echo $proyecto->nombre ?>
+                <?php echo s($proyecto->nombre) ?>
             </a>
         </li>
     <?php endforeach; ?>

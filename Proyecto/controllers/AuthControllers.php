@@ -21,7 +21,8 @@ class AuthControllers{
             else{
                 $errores = $usuario->verificarPassword($password);
                 if($usuario->confirmado == 0) $errores[] = "El usuario no esta validado";
-                if(!isset($errores)){
+                else if(isset($errores)){
+                    
                     session_start();
                     $_SESSION["id"] = $usuario->id;
                     $_SESSION["login"] = true;
@@ -63,7 +64,7 @@ class AuthControllers{
                     $email->enviarEmail();
                     $usuario->guardar();
 
-                    header("Location: /");
+                    header("Location: /?action=12");
                 }else $errores[] = "Los password debe ser iguales";
             }                
         }

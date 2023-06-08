@@ -4,32 +4,38 @@ include __DIR__ . "/base-sup.php";
 
 <div class="titulo-proyecto">
     <h2>
-        Tareas de <?php echo $nombreProyecto ?>
+        <?php echo s($proyecto->nombre) ?>
     </h2>
 </div>
 
-<form action="" class="form-proyecto">
-    <button>Agregar Nueva Tarea</button>
+<form class="form-proyecto">
+    <input type="hidden" id="id_general" name="id" value="<?php echo $proyecto->id ?>">            
+    <button id="btnAgregarTarea">Agregar Nueva Tarea</button>
 </form>
 
 <ul class="lista-tareas">
     <?php foreach($tareas as $tarea): ?>
         <li>
             <p>
-                <?php echo $tarea->tarea ?>
+                <?php echo s($tarea->tarea) ?>
             </p>
-            <div>
+            <form action="/sesion/proyectos/listado?id=<?php echo $proyecto->id ?>&action=1" method="POST">
+                <input type="hidden" name="id" value="<?php echo $tarea->id ?>">
                 <?php 
                     echo $tarea->estado == 0 
-                    ?   "<button class='noHecha'>no hecha</button>" 
-                    :   "<button class='hecha'>hecha</button>"
+                    ?   "<input type='submit' id='btnEstado' class='noHecha' value='no hecha'/>" 
+                    :   "<input type='submit' id='btnEstado' class='hecha' value='hecha'/>"
                 ?>
-                <button class="eliminar">eliminar</button>
-            </div>
+            </form>
+            <form action="/sesion/proyectos/listado?id=<?php echo $proyecto->id ?>&action=2" method="POST">
+                <input type="hidden" name="id" value="<?php echo $tarea->id ?>">
+                <input type='submit' id='btnEliminar' class="eliminar" value="eliminar" />
+            </form>
         </li>
     <?php endforeach; ?>
 </ul>
 
 <?php 
-include __DIR__ . "/base-inf.php"
+include __DIR__ . "/base-inf.php";
+$script = "<script src='/build/js/tarea.js'></script>"
 ?>

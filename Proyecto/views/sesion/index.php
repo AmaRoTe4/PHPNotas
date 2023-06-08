@@ -4,7 +4,7 @@ include __DIR__ . "/base-sup.php";
 
 <div class="content-main">
     <h2>
-        Main
+        Bienvenido <?php echo $nombre ?>
     </h2>
 </div>
 

@@ -15,8 +15,8 @@
         <h4>Ingrese el nombre del proyecto:</h4>
         <form method='POST'>
             <input type="text" name="nombre" placeholder="Nombre">
-            <button id="submit" type="submit">Enviar</button>
-            <button id="btnCancelar" type="button">Cancer</button>
+            <input id="submit" type="submit" value="Enviar" />
+            <input id="btnCancelar" type="button" value="Cancer" />
         </form>
     `;
 

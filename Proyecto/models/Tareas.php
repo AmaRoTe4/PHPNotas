@@ -14,7 +14,7 @@ class Tareas extends Principal{
     public function __construct($initial = []){
         $this->id = $initial["id"] ?? null;
         $this->tarea = $initial["tarea"] ?? "";
-        $this->estado = $initial["estado"] ?? "";
+        $this->estado = $initial["estado"] ?? 0;
         $this->id_proyecto = $initial["id_proyecto"] ?? null;
     }
 }
