@@ -8,9 +8,13 @@ include __DIR__ . "/base-sup.php";
     </h2>
 </div>
 
-<form action="" class="form-proyecto">
-    <button>Agregar Nueva Proyecto</button>
-</form>
+<?php foreach($errores as $error): ?>
+    <h4 style="color: red"><?php echo $error ?></h4>
+<?php endforeach; ?>
+
+<span action="" class="form-proyecto">
+    <button id="btnAgregarProyecto">Agregar Nueva Proyecto</button>
+</span>
 
 <ul class="lista-proyecto">
     <?php foreach($proyectos as $proyecto): ?>
@@ -23,5 +27,6 @@ include __DIR__ . "/base-sup.php";
 </ul>
 
 <?php 
-include __DIR__ . "/base-inf.php"
+include __DIR__ . "/base-inf.php";
+$script = "<script src='/build/js/proyectos.js'></script>"
 ?>

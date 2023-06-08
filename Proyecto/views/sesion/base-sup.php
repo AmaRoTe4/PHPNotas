@@ -1,4 +1,4 @@
-<main class="sesion-content-main">
+<main id="content" class="sesion-content-main">
     <div class="sesion-panel">
         <h2>Controles</h2>
         <ul>

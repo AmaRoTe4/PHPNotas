@@ -2,10 +2,12 @@
 
 $subTitulo = "Iniciar Sesion";
 
+$email = s($usuario->email);
+
 $formulario = "
 <form action='/' method='POST'>
     <label for='email'>Correo Electronico</label>
-    <input type='email' name='email'>
+    <input value='{$email}' type='email' name='email'>
     <label for='password'>Password</label>
     <input type='password' name='password'>
     <input type='submit' value='Iniciar Sesion'>

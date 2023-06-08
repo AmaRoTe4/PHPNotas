@@ -6,8 +6,8 @@ $formulario = "
 <form method='POST'>
     <label for='password'>Password</label>
     <input type='password' name='password'>
-    <label for='password-validation'>Confirme Password</label>
-    <input type='password' name='password-validation'>
+    <label for='passwordvalidation'>Confirme Password</label>
+    <input type='password' name='passwordvalidation'>
     <input type='submit' value='Validar Nueva Contraseña'>
 </form>
 ";

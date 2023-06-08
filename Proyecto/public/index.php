@@ -14,12 +14,10 @@ $router->post("/" , [AuthControllers::class, "index"]);
 $router->get("/auth/crear" , [AuthControllers::class, "crear"]);
 $router->post("/auth/crear" , [AuthControllers::class, "crear"]);
 
-$router->post("/auth/confirmar" , [AuthControllers::class, "crear_confirmar"]);
+$router->get("/auth/confirmar" , [AuthControllers::class, "crear_confirmar"]);
 
 $router->get("/auth/olvide/correo" , [AuthControllers::class, "olvide_correo"]);
 $router->post("/auth/olvide/correo" , [AuthControllers::class, "olvide_correo"]);
-
-$router->post("/auth/olvide/confirmacion" , [AuthControllers::class, "olvide_confirmacion"]);
 
 $router->get("/auth/olvide/password" , [AuthControllers::class, "olvide_password"]);
 $router->post("/auth/olvide/password" , [AuthControllers::class, "olvide_password"]);
@@ -28,7 +26,7 @@ $router->post("/auth/olvide/password" , [AuthControllers::class, "olvide_passwor
 //sesion
 $router->get("/sesion" , [SesionControllers::class, "index"]);
 
-$router->post("/sesion/close" , [SesionControllers::class, "close"]);
+$router->get("/sesion/close" , [SesionControllers::class, "close"]);
 
 $router->get("/sesion/proyectos" , [SesionControllers::class, "proyectos"]);
 $router->post("/sesion/proyectos" , [SesionControllers::class, "proyectos"]);
