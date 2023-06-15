@@ -5,6 +5,7 @@ require_once __DIR__ . '/../includes/app.php';
 use MVC\Router;
 use Controllers\AuthControllers;
 use Controllers\SesionControllers;
+use Controllers\ApiControllers;
 $router = new Router();
 
 //auth
@@ -33,6 +34,17 @@ $router->post("/sesion/proyectos" , [SesionControllers::class, "proyectos"]);
 
 $router->get("/sesion/proyectos/listado" , [SesionControllers::class, "listado_proyectos"]);
 $router->post("/sesion/proyectos/listado" , [SesionControllers::class, "listado_proyectos"]);
+
+//api
+$router->get("/api/proyectos/data" ,   [ApiControllers::class, "pyts"]);
+$router->post("/api/proyectos/update" , [ApiControllers::class, "pyts_upd"]);
+$router->post("/api/proyectos/create" , [ApiControllers::class, "pyts_crt"]);
+$router->post("/api/proyectos/delete" , [ApiControllers::class, "pyts_del"]);
+
+$router->get("/api/tareas/data" ,            [ApiControllers::class, "trs"]);
+$router->post("/api/tareas/update" ,    [ApiControllers::class, "trs_upd"]);
+$router->post("/api/tareas/create" ,    [ApiControllers::class, "trs_crt"]);
+$router->post("/api/tareas/delete" ,    [ApiControllers::class, "trs_del"]);
 
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
