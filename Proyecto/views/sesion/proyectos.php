@@ -2,28 +2,20 @@
 include __DIR__ . "/base-sup.php";
 ?>
 
-<div class="titulo-proyecto">
+<div id="titulo_proyecto" class="titulo-proyecto">
     <h2>
         Proyectos
     </h2>
 </div>
 
-<?php foreach($errores as $error): ?>
-    <h4 style="color: red"><?php echo $error ?></h4>
-<?php endforeach; ?>
+<!-- aca esta los errores -->
 
 <span action="" class="form-proyecto">
     <button id="btnAgregarProyecto">Agregar Nueva Proyecto</button>
 </span>
 
-<ul class="lista-proyecto">
-    <?php foreach($proyectos as $proyecto): ?>
-        <li>
-            <a href="/sesion/proyectos/listado?id=<?php echo $proyecto->id ?>">
-                <?php echo s($proyecto->nombre) ?>
-            </a>
-        </li>
-    <?php endforeach; ?>
+<ul id="lista_proyectos" class="lista-proyecto">
+    <!--aca adentro van todos los proyectos-->
 </ul>
 
 <?php 

@@ -36,6 +36,8 @@ $router->get("/sesion/proyectos/listado" , [SesionControllers::class, "listado_p
 $router->post("/sesion/proyectos/listado" , [SesionControllers::class, "listado_proyectos"]);
 
 //api
+$router->get("/api/data" ,   [ApiControllers::class, "user"]);
+
 $router->get("/api/proyectos/data" ,   [ApiControllers::class, "pyts"]);
 $router->post("/api/proyectos/update" , [ApiControllers::class, "pyts_upd"]);
 $router->post("/api/proyectos/create" , [ApiControllers::class, "pyts_crt"]);

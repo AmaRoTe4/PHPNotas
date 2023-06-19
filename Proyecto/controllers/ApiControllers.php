@@ -16,7 +16,7 @@ class ApiControllers{
 
         if($usuario_id){
             if($id){
-                $newData = Proyectos::get($id);
+                $newData = Proyectos::where("id" , $id)[0];
                 if($newData->id_user == $usuario_id) $data = $newData; 
             }else{
                 $data = Proyectos::where("id_user" , $usuario_id);
@@ -33,7 +33,7 @@ class ApiControllers{
         $nombre = $_POST["nombre"];
 
         if($usuario_id && $id_proyecto && $nombre){
-            $proyecto = Proyectos::get($id_proyecto);
+            $proyecto = Proyectos::where("id" , $id_proyecto)[0];
             
             if($proyecto->id_user != $usuario_id){
                 echo "Accion denegada";
@@ -45,6 +45,7 @@ class ApiControllers{
             if(!$resultado){
                 echo "Error al editar";
             }
+            
         }else {
             echo "Accion denegada";
             return;
@@ -79,15 +80,15 @@ class ApiControllers{
         session_start();
         $usuario_id = $_SESSION["id"] ?? 1;
         $id_proyecto = $_POST["id"] ?? null;
-
+        
         if($usuario_id && $id_proyecto){
-            $proyecto = Proyectos::get($id_proyecto);
+            $proyecto = Proyectos::where("id" , $id_proyecto)[0];
             
             if($proyecto->id_user != $usuario_id){
                 echo "Accion denegada";
                 return;
             }
-
+            
             $resultado = $proyecto->eliminar();
             if(!$resultado){
                 echo "Error al eliminar";
@@ -108,11 +109,11 @@ class ApiControllers{
         $data = null;
 
         if($usuario_id){
-            $proyecto = Proyectos::get($id_proyecto);
+            $proyecto = Proyectos::where("id" , $id_proyecto)[0];
             
             if($proyecto->id_user == $usuario_id){
                 if($id){
-                    $data = Tareas::get($id); 
+                    $data = Tareas::where("id" , $id)[0]; 
                 }else{
                     $data = Tareas::where("id_proyecto" , $id_proyecto);
                 }
@@ -210,6 +211,13 @@ class ApiControllers{
         }
 
         echo "Eliminado con exito";
+    }
+
+    public static function user(){
+        session_start();
+        $data = $_SESSION ?? null;
+        
+        echo json_encode($data);
     }
 
 }

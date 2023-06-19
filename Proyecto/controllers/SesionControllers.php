@@ -28,24 +28,8 @@ class SesionControllers{
     public static function proyectos(Router $router){
         session_start();
         isAuth();
-        $errores = [];
 
-        if($_SERVER["REQUEST_METHOD"] === "POST"){            
-            if($_POST["nombre"] == ""){
-                $errores[] = "Tiene que ingresar un nombre";
-            }else{
-                $proyecto = new Proyectos($_POST);
-                $proyecto->id_user = $_SESSION["id"];
-                $proyecto->guardar();
-            }
-        }
-        
-        $proyectos = Proyectos::where("id_user" , $_SESSION["id"]);
-
-        $router->render("sesion/proyectos" , [
-            "proyectos" => $proyectos,
-            "errores" => $errores
-        ]);
+        $router->render("sesion/proyectos");
     }
 
     public static function listado_proyectos(Router $router){
