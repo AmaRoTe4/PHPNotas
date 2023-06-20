@@ -131,8 +131,8 @@ class ApiControllers{
         $tarea_text = $_POST["tarea"];
         $estado = $_POST["estado"];
 
-        if($usuario_id && $id_tarea && $estado && $id_proyecto){
-            $proyecto = Proyectos::get($id_proyecto);
+        if($usuario_id && $id_tarea && $id_proyecto){
+            $proyecto = Proyectos::where("id" , $id_proyecto)[0];
 
             if($proyecto->id_user != $usuario_id){
                 echo "Accion denegada";
@@ -141,7 +141,7 @@ class ApiControllers{
 
             $tarea = Tareas::where("id", $id_tarea)[0];
             $tarea->estado = $estado;
-            $tarea->tarea = $tarea_text == "" ? $tarea->tarea : $tarea_text ;
+            $tarea->tarea = $tarea_text;
             $resultado = $tarea->guardar();
 
             if(!$resultado){
@@ -162,7 +162,7 @@ class ApiControllers{
         $tarea_text = $_POST["tarea"];
 
         if($usuario_id && $tarea_text && $id_proyecto){
-            $proyecto = Proyectos::get($id_proyecto);
+            $proyecto = Proyectos::where("id" , $id_proyecto)[0];
 
             if($proyecto->id_user != $usuario_id){
                 echo "Accion denegada";
@@ -193,7 +193,7 @@ class ApiControllers{
         
         if($usuario_id && $id_tarea){
             $tarea = Tareas::where("id" , $id_tarea)[0];
-            $proyecto = Proyectos::get($tarea->id_proyecto);
+            $proyecto = Proyectos::where("id" , $tarea->id_proyecto)[0];
 
             if($proyecto->id_user != $usuario_id){
                 echo "Accion denegada";

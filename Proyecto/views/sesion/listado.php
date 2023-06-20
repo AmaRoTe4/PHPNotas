@@ -13,26 +13,8 @@ include __DIR__ . "/base-sup.php";
     <button id="btnAgregarTarea">Agregar Nueva Tarea</button>
 </form>
 
-<ul class="lista-tareas">
-    <?php foreach($tareas as $tarea): ?>
-        <li>
-            <p>
-                <?php echo s($tarea->tarea) ?>
-            </p>
-            <form action="/sesion/proyectos/listado?id=<?php echo $proyecto->id ?>&action=1" method="POST">
-                <input type="hidden" name="id" value="<?php echo $tarea->id ?>">
-                <?php 
-                    echo $tarea->estado == 0 
-                    ?   "<input type='submit' id='btnEstado' class='noHecha' value='no hecha'/>" 
-                    :   "<input type='submit' id='btnEstado' class='hecha' value='hecha'/>"
-                ?>
-            </form>
-            <form action="/sesion/proyectos/listado?id=<?php echo $proyecto->id ?>&action=2" method="POST">
-                <input type="hidden" name="id" value="<?php echo $tarea->id ?>">
-                <input type='submit' id='btnEliminar' class="eliminar" value="eliminar" />
-            </form>
-        </li>
-    <?php endforeach; ?>
+<ul id="lista-tareas" class="lista-tareas">
+    <!-- aca van las tareas -->
 </ul>
 
 <?php 

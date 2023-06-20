@@ -43,7 +43,7 @@ $router->post("/api/proyectos/update" , [ApiControllers::class, "pyts_upd"]);
 $router->post("/api/proyectos/create" , [ApiControllers::class, "pyts_crt"]);
 $router->post("/api/proyectos/delete" , [ApiControllers::class, "pyts_del"]);
 
-$router->get("/api/tareas/data" ,            [ApiControllers::class, "trs"]);
+$router->get("/api/tareas/data" ,       [ApiControllers::class, "trs"]);
 $router->post("/api/tareas/update" ,    [ApiControllers::class, "trs_upd"]);
 $router->post("/api/tareas/create" ,    [ApiControllers::class, "trs_crt"]);
 $router->post("/api/tareas/delete" ,    [ApiControllers::class, "trs_del"]);

@@ -170,23 +170,6 @@
     });
 
     $tituloProyecto.insertAdjacentElement("afterend", div);
-
-    //while ($listaProyectos.firstChild) {
-    //  $listaProyectos.removeChild($listaProyectos.firstChild);
-    //}
-
-    //proyectos.map(proyecto => {
-
-    //  const li = document.createElement('li');
-
-    //  const a = document.createElement("a")
-    //  a.href = `/sesion/proyectos/listado?id=${proyecto.id}`
-    //  a.textContent = proyecto.nombre
-
-    //  li.appendChild(a);
-
-    //  $listaProyectos.appendChild(li)
-    //})
   };
 
   const ObtenerUsuario = async () => {
